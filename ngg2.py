@@ -24,11 +24,11 @@ def check_guess(guess, rn, attempts):
   iGuess = int(guess)
   if iGuess > 10 or iGuess < 1:
     return "The guess must be between 1 and 10"
-  if iGuess < rn:
+  elif iGuess < rn:
     return "The target number is higher"
-  if iGuess > rn:
+  elif iGuess > rn:
     return "The target number is lower"
-  if iGuess == rn:
+  elif iGuess == rn:
     win_game(att)
 
 def win_game(attempts):
@@ -48,6 +48,7 @@ def play_again():
   print("Please enter yes or no")
   play_again()
 
+# split off so that it can be called either when the program starts or if the end user decides to play again
 def get_player_name():
   player_name = input("What is your name? ")
   names_list.append(player_name)
