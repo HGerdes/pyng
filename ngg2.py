@@ -30,6 +30,7 @@ def check_guess(guess, rn, attempts):
     return "The target number is lower"
   elif iGuess == rn:
     win_game(att)
+    return "win"
 
 def win_game(attempts):
   print("Nice! You got it!")
@@ -65,6 +66,8 @@ def run_game(name):
     attempts += 1
     test = check_guess(guess, target, attempts)
     print(test)
+    if test == "win":
+      play = False
 
 def start_game():
   print("Hello traveler! Welcome to the game of guesses!")
